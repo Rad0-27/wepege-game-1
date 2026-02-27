@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BubbleLevelManager : MonoBehaviour
 {
@@ -37,5 +38,9 @@ public class BubbleLevelManager : MonoBehaviour
 
         if (poppedCount >= targetToFinish)
             nextButton.SetActive(true);
+    }
+    public void GameComplete()
+    {
+        SceneManager.LoadScene("Stage Map");
     }
 }
