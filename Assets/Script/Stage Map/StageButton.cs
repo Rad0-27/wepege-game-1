@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StageManager : MonoBehaviour
@@ -26,5 +27,9 @@ public class StageManager : MonoBehaviour
     public void ClosePanel()
     {
         levelPanel.SetActive(false);
+    }
+    public void Back()
+    {
+        SceneManager.LoadScene("Start Screen");
     }
 }
