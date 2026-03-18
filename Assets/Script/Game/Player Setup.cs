@@ -1,15 +1,17 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class PlayerSetupUI : MonoBehaviour
 {
-    public TMP_InputField nameInput;
-    public string selectedGender;
     public GameObject setupPanel;
 
-    private void Start()
+    public TMP_InputField nameInput;
+
+    private string selectedGender;
+
+    void Start()
     {
-        if (PlayerDataManager.Instance.HasPlayedBefore())
+        if (PlayerPrefs.HasKey("PlayerName"))
         {
             setupPanel.SetActive(false);
         }
@@ -31,10 +33,26 @@ public class PlayerSetupUI : MonoBehaviour
 
     public void OnStartButton()
     {
-        if (nameInput.text != "" && selectedGender != "")
+        if (nameInput.text == "" || selectedGender == "")
         {
-            PlayerDataManager.Instance.SaveData(nameInput.text, selectedGender);
-            setupPanel.SetActive(false);
+            Debug.Log("Nama atau gender belum diisi");
+            return;
         }
+
+        PlayerPrefs.SetString("PlayerName", nameInput.text);
+        PlayerPrefs.SetString("Gender", selectedGender);
+        PlayerPrefs.Save();
+
+        setupPanel.SetActive(false);
+
+        Debug.Log("Player Saved: " + nameInput.text);
+    }
+
+    // ⭐ dipanggil oleh tombol reset
+    public void ShowSetupPanel()
+    {
+        nameInput.text = "";
+        selectedGender = "";
+        setupPanel.SetActive(true);
     }
 }
