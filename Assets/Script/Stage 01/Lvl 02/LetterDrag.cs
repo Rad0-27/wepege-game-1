@@ -10,7 +10,6 @@ public class LetterDrag : MonoBehaviour
     public void Setup(char c, Sprite sprite)
     {
         letter = c;
-
         GetComponent<SpriteRenderer>().sprite = sprite;
     }
 

@@ -14,9 +14,7 @@ public class LetterLibrary : MonoBehaviour
             char c = char.ToUpper(s.name[0]);
 
             if (!letters.ContainsKey(c))
-            {
                 letters.Add(c, s);
-            }
         }
     }
 

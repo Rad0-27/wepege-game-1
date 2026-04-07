@@ -244,7 +244,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Option_IN
+  m_Name: Credit_IN
   m_Speed: 1
   m_CycleOffset: 1
   m_Transitions:
@@ -271,7 +271,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Option_OUT
+  m_Name: Credit_OUT
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

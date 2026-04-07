@@ -3,7 +3,6 @@ using UnityEngine;
 public class LetterSlot : MonoBehaviour
 {
     public char correctLetter;
-
     public LetterDrag currentLetter;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -13,8 +12,9 @@ public class LetterSlot : MonoBehaviour
         if (letter != null && currentLetter == null)
         {
             currentLetter = letter;
-
             letter.transform.position = transform.position;
+
+            NameLevelManager.instance.CheckSlots();
         }
     }
 

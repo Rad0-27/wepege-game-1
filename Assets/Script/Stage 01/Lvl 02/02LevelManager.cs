@@ -27,6 +27,10 @@ public class NameLevelManager : MonoBehaviour
     {
         playerName = PlayerPrefs.GetString("PlayerName").ToUpper();
 
+        Debug.Log("PlayerName: " + PlayerPrefs.GetString("PlayerName"));
+        Debug.Log("SlotPrefab: " + slotPrefab);
+        Debug.Log("SlotContainer: " + slotContainer);
+
         GenerateSlots();
         GenerateLetters();
     }
@@ -58,7 +62,7 @@ public class NameLevelManager : MonoBehaviour
         foreach (char c in letters)
         {
             Vector3 pos = spawnArea.position +
-            new Vector3(Random.Range(-3f, 3f), Random.Range(-2f, 2f), 0);
+                new Vector3(Random.Range(-3f, 3f), Random.Range(-2f, 2f), 0);
 
             GameObject obj = Instantiate(letterPrefab, pos, Quaternion.identity);
 
@@ -103,7 +107,6 @@ public class NameLevelManager : MonoBehaviour
             if (slot.currentLetter.letter != slot.correctLetter)
             {
                 correct = false;
-
                 WrongEffect(slot);
             }
         }
