@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,6 +6,7 @@ public class NameLevelManager : MonoBehaviour
 {
     public static NameLevelManager instance;
 
+    [Header("Reference")]
     public LetterLibrary library;
 
     public GameObject letterPrefab;
@@ -16,7 +17,9 @@ public class NameLevelManager : MonoBehaviour
 
     private List<LetterSlot> slots = new List<LetterSlot>();
 
-    string playerName;
+    private string playerName;
+
+    private bool isChecking = false;
 
     void Awake()
     {
@@ -25,16 +28,16 @@ public class NameLevelManager : MonoBehaviour
 
     void Start()
     {
-        playerName = PlayerPrefs.GetString("PlayerName").ToUpper();
-
-        Debug.Log("PlayerName: " + PlayerPrefs.GetString("PlayerName"));
-        Debug.Log("SlotPrefab: " + slotPrefab);
-        Debug.Log("SlotContainer: " + slotContainer);
+        // ambil nama player (pakai default biar aman)
+        playerName = PlayerPrefs.GetString("PlayerName", "ABC").ToUpper();
 
         GenerateSlots();
         GenerateLetters();
     }
 
+    // =========================
+    // GENERATE SLOT
+    // =========================
     void GenerateSlots()
     {
         float spacing = 1.5f;
@@ -53,6 +56,9 @@ public class NameLevelManager : MonoBehaviour
         }
     }
 
+    // =========================
+    // GENERATE LETTER
+    // =========================
     void GenerateLetters()
     {
         List<char> letters = new List<char>(playerName.ToCharArray());
@@ -70,10 +76,18 @@ public class NameLevelManager : MonoBehaviour
 
             Sprite sprite = library.GetSprite(c);
 
+            if (sprite == null)
+            {
+                Debug.LogError("SPRITE TIDAK ADA: " + c);
+            }
+
             drag.Setup(c, sprite);
         }
     }
 
+    // =========================
+    // SHUFFLE HURUF
+    // =========================
     void Shuffle(List<char> list)
     {
         for (int i = 0; i < list.Count; i++)
@@ -87,60 +101,85 @@ public class NameLevelManager : MonoBehaviour
         }
     }
 
+    // =========================
+    // AUTO CHECK SLOT
+    // =========================
     public void CheckSlots()
     {
+        if (isChecking) return;
+
         foreach (LetterSlot s in slots)
         {
             if (s.currentLetter == null)
                 return;
         }
 
+        isChecking = true;
+
         CheckAnswer();
     }
 
+    // =========================
+    // CEK JAWABAN
+    // =========================
     void CheckAnswer()
     {
         bool correct = true;
 
+        List<LetterSlot> wrongSlots = new List<LetterSlot>();
+
         foreach (LetterSlot slot in slots)
         {
-            if (slot.currentLetter.letter != slot.correctLetter)
+            if (slot.currentLetter == null ||
+                slot.currentLetter.letter != slot.correctLetter)
             {
                 correct = false;
-                WrongEffect(slot);
+                wrongSlots.Add(slot);
             }
         }
 
         if (correct)
         {
             Debug.Log("BENAR!");
+            isChecking = false;
+
+            // 👉 nanti bisa lanjut level di sini
+            return;
         }
+
+        // 🚀 eject semua yang salah
+        foreach (LetterSlot slot in wrongSlots)
+        {
+            StartCoroutine(WrongEffect(slot));
+        }
+
+        isChecking = false;
     }
 
-    void WrongEffect(LetterSlot slot)
+    // =========================
+    // WRONG EFFECT
+    // =========================
+    IEnumerator WrongEffect(LetterSlot slot)
     {
-        StartCoroutine(Wiggle(slot.transform));
+        Vector3 start = slot.transform.position;
 
+        // wiggle
+        for (int i = 0; i < 6; i++)
+        {
+            slot.transform.position = start + Vector3.left * 0.1f;
+            yield return new WaitForSeconds(0.02f);
+
+            slot.transform.position = start + Vector3.right * 0.1f;
+            yield return new WaitForSeconds(0.02f);
+        }
+
+        slot.transform.position = start;
+
+        // eject huruf
         if (slot.currentLetter != null)
         {
             slot.currentLetter.ReturnToStart();
             slot.ClearSlot();
         }
-    }
-
-    IEnumerator Wiggle(Transform t)
-    {
-        Vector3 start = t.position;
-
-        for (int i = 0; i < 8; i++)
-        {
-            t.position = start + Vector3.left * 0.1f;
-            yield return new WaitForSeconds(0.03f);
-
-            t.position = start + Vector3.right * 0.1f;
-            yield return new WaitForSeconds(0.03f);
-        }
-
-        t.position = start;
     }
 }
