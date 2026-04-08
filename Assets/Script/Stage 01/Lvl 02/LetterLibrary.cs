@@ -1,29 +1,56 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class LetterLibrary : MonoBehaviour
 {
-    public Dictionary<char, Sprite> letters = new Dictionary<char, Sprite>();
+    public Dictionary<char, Sprite> normalLetters = new Dictionary<char, Sprite>();
+    public Dictionary<char, Sprite> shadowLetters = new Dictionary<char, Sprite>();
 
     void Awake()
     {
         Sprite[] sprites = Resources.LoadAll<Sprite>("Art/Letter");
 
-        foreach (Sprite s in sprites)
+        // ✅ SORT BERDASARKAN ANGKA NAMA FILE
+        var sorted = sprites.OrderBy(s =>
         {
-            char c = char.ToUpper(s.name[0]);
+            int number;
+            int.TryParse(s.name, out number);
+            return number;
+        }).ToArray();
 
-            if (!letters.ContainsKey(c))
-                letters.Add(c, s);
+        char currentChar = 'A';
+
+        for (int i = 0; i < sorted.Length; i += 2)
+        {
+            if (i + 1 >= sorted.Length) break;
+
+            // genap = normal
+            normalLetters[currentChar] = sorted[i];
+
+            // ganjil = shadow
+            shadowLetters[currentChar] = sorted[i + 1];
+
+            currentChar++;
         }
     }
 
-    public Sprite GetSprite(char c)
+    public Sprite GetNormal(char c)
     {
         c = char.ToUpper(c);
 
-        if (letters.ContainsKey(c))
-            return letters[c];
+        if (normalLetters.ContainsKey(c))
+            return normalLetters[c];
+
+        return null;
+    }
+
+    public Sprite GetShadow(char c)
+    {
+        c = char.ToUpper(c);
+
+        if (shadowLetters.ContainsKey(c))
+            return shadowLetters[c];
 
         return null;
     }

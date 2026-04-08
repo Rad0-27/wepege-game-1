@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class LetterDrag : MonoBehaviour
 {
@@ -9,21 +10,30 @@ public class LetterDrag : MonoBehaviour
 
     private bool isPlaced = false;
 
-    private LetterSlot currentSlotCandidate;
+
 
     void Start()
     {
         startPos = transform.position;
     }
 
-    // =========================
-    // SETUP DARI LEVEL MANAGER
-    // =========================
+    public float scaleMultiplier = 1f;
+
     public void Setup(char c, Sprite sprite)
     {
         letter = c;
 
-        GetComponent<SpriteRenderer>().sprite = sprite;
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.sprite = sprite;
+
+        // auto normalize size
+        float targetSize = 1.5f;
+
+        float spriteSize = sr.bounds.size.x;
+
+        float scale = targetSize / spriteSize;
+
+        transform.localScale = Vector3.one * scale * scaleMultiplier;
     }
 
     void OnMouseDown()
@@ -53,11 +63,18 @@ public class LetterDrag : MonoBehaviour
         }
     }
 
+    Vector3 MouseWorld()
+    {
+        Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        pos.z = 0;
+        return pos;
+    }
+
     LetterSlot FindNearestSlot()
     {
-        LetterSlot[] allSlots = FindObjectsByType<LetterSlot>(FindObjectsSortMode.None);
+        var allSlots = NameLevelManager.instance.GetAllSlots();
 
-        float minDistance = 0.7f; // radius snap (bisa diatur)
+        float minDistance = 0.8f;
         LetterSlot nearest = null;
 
         foreach (LetterSlot slot in allSlots)
@@ -75,22 +92,6 @@ public class LetterDrag : MonoBehaviour
 
         return nearest;
     }
-    Vector3 MouseWorld()
-    {
-        Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        pos.z = 0;
-        return pos;
-    }
-
-    public void SetSlotCandidate(LetterSlot slot)
-    {
-        currentSlotCandidate = slot;
-    }
-
-    public void ClearSlotCandidate()
-    {
-        currentSlotCandidate = null;
-    }
 
     void PlaceInSlot(LetterSlot slot)
     {
@@ -101,14 +102,14 @@ public class LetterDrag : MonoBehaviour
         StartCoroutine(SmoothSnap(slot.transform.position));
     }
 
-    System.Collections.IEnumerator SmoothSnap(Vector3 target)
+    IEnumerator SmoothSnap(Vector3 target)
     {
         float t = 0;
         Vector3 start = transform.position;
 
         while (t < 1)
         {
-            t += Time.deltaTime * 10f;
+            t += Time.deltaTime * 6f;
             transform.position = Vector3.Lerp(start, target, t);
             yield return null;
         }
@@ -120,10 +121,5 @@ public class LetterDrag : MonoBehaviour
     {
         isPlaced = false;
         transform.position = startPos;
-    }
-
-    public bool IsPlaced()
-    {
-        return isPlaced;
     }
 }

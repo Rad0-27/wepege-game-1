@@ -6,23 +6,26 @@ public class LetterSlot : MonoBehaviour
 
     public LetterDrag currentLetter;
 
-    void OnTriggerEnter2D(Collider2D other)
+    [Header("Size Control")]
+    public float targetSize = 1.5f;   // ukuran slot di world
+
+    public void SetVisual(Sprite sprite)
     {
-        LetterDrag letter = other.GetComponent<LetterDrag>();
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.sprite = sprite;
 
-        if (letter != null && currentLetter == null)
+        // transparansi (bayangan)
+        Color c = sr.color;
+        c.a = 0.5f;
+        sr.color = c;
+
+        // ✅ AUTO SCALE
+        float spriteSize = sr.bounds.size.x;
+
+        if (spriteSize > 0)
         {
-            letter.SetSlotCandidate(this);
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        LetterDrag letter = other.GetComponent<LetterDrag>();
-
-        if (letter != null)
-        {
-            letter.ClearSlotCandidate();
+            float scale = targetSize / spriteSize;
+            transform.localScale = Vector3.one * scale;
         }
     }
 
@@ -30,11 +33,19 @@ public class LetterSlot : MonoBehaviour
     {
         currentLetter = letter;
 
+        // highlight saat terisi
+        GetComponent<SpriteRenderer>().color = Color.white;
+
         NameLevelManager.instance.CheckSlots();
     }
 
     public void ClearSlot()
     {
         currentLetter = null;
+
+        // kembali ke transparan
+        Color c = GetComponent<SpriteRenderer>().color;
+        c.a = 0.5f;
+        GetComponent<SpriteRenderer>().color = c;
     }
 }

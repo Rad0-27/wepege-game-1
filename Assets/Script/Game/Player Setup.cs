@@ -4,6 +4,7 @@ using TMPro;
 public class PlayerSetupUI : MonoBehaviour
 {
     public GameObject setupPanel;
+    public GameObject page2;
 
     public TMP_InputField nameInput;
 
@@ -33,19 +34,30 @@ public class PlayerSetupUI : MonoBehaviour
 
     public void OnStartButton()
     {
-        if (nameInput.text == "" || selectedGender == "")
+        if (nameInput.text == "")
         {
             Debug.Log("Nama atau gender belum diisi");
             return;
         }
 
         PlayerPrefs.SetString("PlayerName", nameInput.text);
-        PlayerPrefs.SetString("Gender", selectedGender);
-        PlayerPrefs.Save();
-
+        
         setupPanel.SetActive(false);
+        page2.SetActive(true);
 
         Debug.Log("Player Saved: " + nameInput.text);
+    }
+
+    public void closeSetUp()
+    {
+        if (selectedGender == "")
+        {
+            Debug.Log("Nama atau gender belum diisi");
+            return;
+        }
+        PlayerPrefs.SetString("Gender", selectedGender);
+        PlayerPrefs.Save();
+        page2.SetActive(false);
     }
 
     // ⭐ dipanggil oleh tombol reset

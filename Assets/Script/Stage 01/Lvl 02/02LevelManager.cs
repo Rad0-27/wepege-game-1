@@ -6,7 +6,6 @@ public class NameLevelManager : MonoBehaviour
 {
     public static NameLevelManager instance;
 
-    [Header("Reference")]
     public LetterLibrary library;
 
     public GameObject letterPrefab;
@@ -28,15 +27,19 @@ public class NameLevelManager : MonoBehaviour
 
     void Start()
     {
-        // ambil nama player (pakai default biar aman)
         playerName = PlayerPrefs.GetString("PlayerName", "ABC").ToUpper();
 
         GenerateSlots();
         GenerateLetters();
     }
 
+    public List<LetterSlot> GetAllSlots()
+    {
+        return slots;
+    }
+
     // =========================
-    // GENERATE SLOT
+    // SLOT
     // =========================
     void GenerateSlots()
     {
@@ -50,14 +53,19 @@ public class NameLevelManager : MonoBehaviour
 
             LetterSlot slot = obj.GetComponent<LetterSlot>();
 
-            slot.correctLetter = playerName[i];
+            char c = playerName[i];
+
+            slot.correctLetter = c;
+
+            Sprite shadow = library.GetShadow(c);
+            slot.SetVisual(shadow);
 
             slots.Add(slot);
         }
     }
 
     // =========================
-    // GENERATE LETTER
+    // LETTER
     // =========================
     void GenerateLetters()
     {
@@ -74,7 +82,7 @@ public class NameLevelManager : MonoBehaviour
 
             LetterDrag drag = obj.GetComponent<LetterDrag>();
 
-            Sprite sprite = library.GetSprite(c);
+            Sprite sprite = library.GetNormal(c);
 
             if (sprite == null)
             {
@@ -85,9 +93,6 @@ public class NameLevelManager : MonoBehaviour
         }
     }
 
-    // =========================
-    // SHUFFLE HURUF
-    // =========================
     void Shuffle(List<char> list)
     {
         for (int i = 0; i < list.Count; i++)
@@ -102,7 +107,7 @@ public class NameLevelManager : MonoBehaviour
     }
 
     // =========================
-    // AUTO CHECK SLOT
+    // CHECK
     // =========================
     public void CheckSlots()
     {
@@ -119,9 +124,6 @@ public class NameLevelManager : MonoBehaviour
         CheckAnswer();
     }
 
-    // =========================
-    // CEK JAWABAN
-    // =========================
     void CheckAnswer()
     {
         bool correct = true;
@@ -142,12 +144,9 @@ public class NameLevelManager : MonoBehaviour
         {
             Debug.Log("BENAR!");
             isChecking = false;
-
-            // 👉 nanti bisa lanjut level di sini
             return;
         }
 
-        // 🚀 eject semua yang salah
         foreach (LetterSlot slot in wrongSlots)
         {
             StartCoroutine(WrongEffect(slot));
@@ -156,14 +155,10 @@ public class NameLevelManager : MonoBehaviour
         isChecking = false;
     }
 
-    // =========================
-    // WRONG EFFECT
-    // =========================
     IEnumerator WrongEffect(LetterSlot slot)
     {
         Vector3 start = slot.transform.position;
 
-        // wiggle
         for (int i = 0; i < 6; i++)
         {
             slot.transform.position = start + Vector3.left * 0.1f;
@@ -175,7 +170,6 @@ public class NameLevelManager : MonoBehaviour
 
         slot.transform.position = start;
 
-        // eject huruf
         if (slot.currentLetter != null)
         {
             slot.currentLetter.ReturnToStart();

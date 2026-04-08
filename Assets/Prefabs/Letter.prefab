@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8801322727644099169}
-  - component: {fileID: 3882065910427140512}
   - component: {fileID: 5553667775139266863}
+  - component: {fileID: 3882065910427140512}
   - component: {fileID: 1643779688199038792}
   m_Layer: 0
   m_Name: Letter
@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 7796702718186035207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
+  m_LocalScale: {x: 0.18, y: 0.18, z: 0.18}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -38,19 +38,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3882065910427140512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7796702718186035207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aaf81c2db6d68c4893bc5f64fd23873, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LetterDrag
-  letter: 0
 --- !u!212 &5553667775139266863
 SpriteRenderer:
   serializedVersion: 2
@@ -100,16 +87,29 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c4b537d379a5ec4479e547dd1b01a225, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.64, y: 1.83}
+  m_Size: {x: 4.64, y: 6.14}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &3882065910427140512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7796702718186035207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aaf81c2db6d68c4893bc5f64fd23873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LetterDrag
+  letter: 0
 --- !u!61 &1643779688199038792
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,15 +144,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.070136905, y: 0.0500983}
+  m_Offset: {x: -0.26001883, y: -0.029019356}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16.54, y: 16.54}
+    newSize: {x: 4.64, y: 6.14}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.970514, y: 3.2510617}
+  m_Size: {x: 8.730264, y: 10.0551605}
   m_EdgeRadius: 0
