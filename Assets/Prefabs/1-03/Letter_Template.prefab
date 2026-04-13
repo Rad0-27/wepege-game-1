@@ -270,6 +270,37 @@ SpriteMask:
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
   m_MaskSource: 0
+--- !u!1 &3839104070909902836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6004297015064365654}
+  m_Layer: 0
+  m_Name: Mid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6004297015064365654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3839104070909902836}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.01, y: 1.67, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4108190234171300642}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4934547710834396989
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +550,7 @@ Transform:
   - {fileID: 4692240019095329846}
   - {fileID: 521524127577217870}
   - {fileID: 6726667534227590937}
+  - {fileID: 6004297015064365654}
   - {fileID: 1914116288449145811}
   m_Father: {fileID: 7370411022565266760}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -543,6 +575,7 @@ MonoBehaviour:
   arrow: {fileID: 4934547710834396989}
   maskTransform: {fileID: 521524127577217870}
   maskStart: {fileID: 6726667534227590937}
+  maskMid: {fileID: 6004297015064365654}
   maskEnd: {fileID: 1914116288449145811}
   startRadius: 0.2
   followRadius: 0.3

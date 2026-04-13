@@ -16,6 +16,7 @@ public class StrokeTracer : MonoBehaviour
     [Header("Mask")]
     public Transform maskTransform;
     public Transform maskStart;
+    public Transform maskMid;
     public Transform maskEnd;
 
     [Header("Settings")]
@@ -30,7 +31,7 @@ public class StrokeTracer : MonoBehaviour
     [Header("Arrow")]
     float rotationOffset = 107f;
 
-    private int currentIndex = 0;
+    public int currentIndex = 0;
     private bool isDragging = false;
 
     void Start()
@@ -104,7 +105,6 @@ public class StrokeTracer : MonoBehaviour
             {
                 currentIndex = i;
                 UpdateMaskProgress();
-                UpdateMaskProgress();
                 UpdateArrowPosition();
             }
         }
@@ -133,30 +133,31 @@ public class StrokeTracer : MonoBehaviour
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             float angle0 = rotationOffset + angle;
             arrow.transform.rotation = Quaternion.Euler(0, 0, angle0);
-            Debug.Log(angle0);
         }
     }
 
     // ==============================
     // 🎯 UPDATE MASK PROGRESS
     // ==============================
-    void UpdateMaskProgress()
+    protected virtual void UpdateMaskProgress()
     {
-        if (maskTransform == null || maskStart == null || maskEnd == null) return;
+        if (maskTransform == null || maskStart == null || maskEnd == null || maskMid == null) return;
 
-        float progress = (float)currentIndex / (curvePoints.Count - 1);
+        float t = (float)currentIndex / (curvePoints.Count - 1);
 
-        maskTransform.position = Vector3.Lerp(
-            maskStart.position,
-            maskEnd.position,
-            progress
-        );
+        // 🔥 Quadratic Bezier
+        Vector3 pos =
+            Mathf.Pow(1 - t, 2) * maskStart.position +
+            2 * (1 - t) * t * maskMid.position +
+            Mathf.Pow(t, 2) * maskEnd.position;
+
+        maskTransform.position = pos;
     }
 
     // ==============================
     // ✅ COMPLETE
     // ==============================
-    void CompleteStroke()
+    protected virtual void CompleteStroke()
     {
         isDragging = false;
 
@@ -220,7 +221,7 @@ public class StrokeTracer : MonoBehaviour
             arrow.SetActive(false);
     }
 
-    void ResetProgressInstant()
+    protected virtual void ResetProgressInstant()
     {
         currentIndex = 0;
 
@@ -291,6 +292,44 @@ public class StrokeTracer : MonoBehaviour
             {
                 Gizmos.DrawSphere(p, 0.05f);
             }
+        }
+        if (maskStart == null || maskMid == null || maskEnd == null) return;
+
+        // =========================
+        // 🔮 TITIK (VIOLET)
+        // =========================
+        Color violet = new Color(0.6f, 0.2f, 0.8f);
+
+        Gizmos.color = violet;
+        Gizmos.DrawSphere(maskStart.position, 0.12f);
+        Gizmos.DrawSphere(maskMid.position, 0.12f);
+        Gizmos.DrawSphere(maskEnd.position, 0.12f);
+
+        // garis bantu (optional)
+        Gizmos.DrawLine(maskStart.position, maskMid.position);
+        Gizmos.DrawLine(maskMid.position, maskEnd.position);
+
+        // =========================
+        // 🌸 CURVE (PINK)
+        // =========================
+        Color pink = new Color(1f, 0.4f, 0.7f);
+        Gizmos.color = pink;
+
+        Vector3 prevPoint = maskStart.position;
+
+        int resolution = 30;
+
+        for (int i = 1; i <= resolution; i++)
+        {
+            float t = i / (float)resolution;
+
+            Vector3 point =
+                Mathf.Pow(1 - t, 2) * maskStart.position +
+                2 * (1 - t) * t * maskMid.position +
+                Mathf.Pow(t, 2) * maskEnd.position;
+
+            Gizmos.DrawLine(prevPoint, point);
+            prevPoint = point;
         }
     }
 }
