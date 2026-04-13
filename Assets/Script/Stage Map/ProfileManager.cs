@@ -49,8 +49,8 @@ public class ProfileManager : MonoBehaviour
     public void SaveData()
     {
         PlayerPrefs.SetString("PlayerName", inputName.text);
-
         PlayerPrefs.Save();
+        LoadData();
         UpdateUI();
     }
 
@@ -87,14 +87,17 @@ public class ProfileManager : MonoBehaviour
         if (gender == "Boy")
         {
             profileIcon.sprite = maleIcon;
+            InSettingI.sprite = maleIcon;
         }
         if (gender == "Girl")
         {
             profileIcon.sprite = femaleIcon;
+            InSettingI.sprite = femaleIcon;
         }
         if(gender == "Meng")
         {  
             profileIcon.sprite = mengIcon;
+            InSettingI.sprite = mengIcon;
         }
     }
 
