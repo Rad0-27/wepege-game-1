@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 44eb3387f12c70d448fc32ebacbf0f6d
+guid: 09538d2fb88b5f6479f7d020b25bab3c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4574956868059127618
-    second: Tak berjudul42_20260405003538_0
+      213: 128889091407729587
+    second: U_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tak berjudul42_20260405003538_0
+      name: U_0
       rect:
         serializedVersion: 2
-        x: 531
-        y: 108
-        width: 938
-        height: 607
+        x: 460
+        y: 246
+        width: 1127
+        height: 1549
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 24fd56748038d7f30800000000000000
-      internalID: 4574956868059127618
+      spriteID: 3b3d7cc12f7e9c100800000000000000
+      internalID: 128889091407729587
       vertices: []
       indices: 
       edges: []
@@ -161,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tak berjudul42_20260405003538_0: 4574956868059127618
+      U_0: 128889091407729587
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

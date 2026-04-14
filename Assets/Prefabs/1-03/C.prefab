@@ -212,6 +212,7 @@ MonoBehaviour:
   resolution: 8
   maskObject: {fileID: 8518548571396659184}
   strokeRenderer: {fileID: 8360197559624077747}
+  currentIndex: 0
 --- !u!120 &7211743073214089894
 LineRenderer:
   serializedVersion: 3
@@ -1069,6 +1070,7 @@ MonoBehaviour:
   resolution: 8
   maskObject: {fileID: 2363840976664189403}
   strokeRenderer: {fileID: 5511148613970640099}
+  currentIndex: 0
 --- !u!120 &5172783877478507287
 LineRenderer:
   serializedVersion: 3
@@ -1360,7 +1362,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.43, y: 17.48}
+  m_Size: {x: 9.69, y: 11.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1513,7 +1515,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.43, y: 17.48}
+  m_Size: {x: 9.73, y: 6.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
