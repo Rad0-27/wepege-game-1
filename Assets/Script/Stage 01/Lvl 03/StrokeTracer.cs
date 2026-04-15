@@ -31,6 +31,24 @@ public class StrokeTracer : MonoBehaviour
     [Header("Arrow")]
     float rotationOffset = 107f;
 
+    // ==============================
+    // 🔥 ARROW SETTINGS
+    // ==============================
+    [Header("Arrow Hint")]
+    public float pulseSpeed = 4f;
+    public float pulseScale = 1.2f;
+
+    [Header("Idle Hint")]
+    public float idleDelay = 2f;
+    public float demoSpeed = 1.5f;
+    public int demoLoop = 2;
+
+    // ==============================
+    float idleTimer = 0f;
+    bool isDemoPlaying = false;
+    Vector3 arrowBaseScale;
+
+
     public int currentIndex = 0;
     private bool isDragging = false;
 
@@ -43,6 +61,7 @@ public class StrokeTracer : MonoBehaviour
 
         if (arrow != null)
             arrow.SetActive(false);
+            arrowBaseScale = arrow.transform.localScale;
 
         if (maskTransform != null && maskStart != null)
             maskTransform.position = maskStart.position;
@@ -52,6 +71,8 @@ public class StrokeTracer : MonoBehaviour
 
         if (strokeRenderer != null)
             strokeRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+
+        UpdateArrowPosition();
     }
 
     void Update()
@@ -87,9 +108,15 @@ public class StrokeTracer : MonoBehaviour
             {
                 ResetStroke();
             }
-
+            if (arrow != null && controlPoints != null && controlPoints.Count > 0)
+            {
+                arrow.transform.position = controlPoints[0].position;
+                arrow.SetActive(true);
+            }
             isDragging = false;
         }
+        HandleArrowPulse();
+        HandleIdleDemo();
     }
 
     // ==============================
@@ -134,6 +161,55 @@ public class StrokeTracer : MonoBehaviour
             float angle0 = rotationOffset + angle;
             arrow.transform.rotation = Quaternion.Euler(0, 0, angle0);
         }
+    }
+
+    void HandleArrowPulse()
+    {
+        if (arrow == null) return;
+
+        float scale = 1 + Mathf.Sin(Time.time * pulseSpeed) * (pulseScale - 1f);
+        arrow.transform.localScale = arrowBaseScale * scale;
+    }
+
+    void HandleIdleDemo()
+    {
+        if (arrow == null || isDemoPlaying) return;
+
+        if (Input.GetMouseButton(0))
+        {
+            idleTimer = 0f;
+            return;
+        }
+
+        idleTimer += Time.deltaTime;
+
+        if (idleTimer >= idleDelay)
+        {
+            StartCoroutine(PlayDemo());
+        }
+    }
+
+    System.Collections.IEnumerator PlayDemo()
+    {
+        isDemoPlaying = true;
+        idleTimer = 0f;
+
+        for (int loop = 0; loop < demoLoop; loop++)
+        {
+            for (int i = 0; i < curvePoints.Count; i++)
+            {
+                if (Input.GetMouseButton(0)) break;
+
+                arrow.transform.position = Vector3.Lerp(
+                arrow.transform.position,
+                curvePoints[i],
+                Time.deltaTime * 10f);
+
+                yield return new WaitForSeconds(1f / (demoSpeed * 60f));
+            }
+        }
+
+        isDemoPlaying = false;
     }
 
     // ==============================
@@ -230,6 +306,12 @@ public class StrokeTracer : MonoBehaviour
 
         if (strokeVisual != null)
             strokeVisual.SetActive(false);
+
+        if (arrow != null && controlPoints != null)
+        {
+            arrow.transform.position = controlPoints[0].position;
+            arrow.SetActive(true);
+        }
     }
 
     // ==============================

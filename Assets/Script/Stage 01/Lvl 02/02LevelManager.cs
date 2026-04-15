@@ -1,6 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NameLevelManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class NameLevelManager : MonoBehaviour
 
     public Transform spawnArea;
     public Transform slotContainer;
+
+    public GameObject nextButton;
 
     private List<LetterSlot> slots = new List<LetterSlot>();
 
@@ -28,6 +31,8 @@ public class NameLevelManager : MonoBehaviour
     void Start()
     {
         playerName = PlayerPrefs.GetString("PlayerName", "ABC").ToUpper();
+
+        nextButton.SetActive(false);
 
         GenerateSlots();
         GenerateLetters();
@@ -144,6 +149,8 @@ public class NameLevelManager : MonoBehaviour
         {
             Debug.Log("BENAR!");
             isChecking = false;
+            nextButton.SetActive(true);
+
             return;
         }
 
@@ -153,6 +160,11 @@ public class NameLevelManager : MonoBehaviour
         }
 
         isChecking = false;
+    }
+
+    public void GameComplete()
+    {
+        SceneManager.LoadScene("Stage Map");
     }
 
     IEnumerator WrongEffect(LetterSlot slot)
