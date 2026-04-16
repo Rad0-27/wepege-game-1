@@ -212,6 +212,11 @@ MonoBehaviour:
   resolution: 8
   maskObject: {fileID: 8518548571396659184}
   strokeRenderer: {fileID: 8360197559624077747}
+  pulseSpeed: 4
+  pulseScale: 1.2
+  idleDelay: 2
+  demoSpeed: 1.5
+  demoLoop: 2
   currentIndex: 0
 --- !u!120 &7211743073214089894
 LineRenderer:
@@ -483,7 +488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -20}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.48, y: 0.38}
+  m_AnchoredPosition: {x: -0.03, y: 0.46}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!331 &2193664902396788367
@@ -1070,6 +1075,11 @@ MonoBehaviour:
   resolution: 8
   maskObject: {fileID: 2363840976664189403}
   strokeRenderer: {fileID: 5511148613970640099}
+  pulseSpeed: 4
+  pulseScale: 1.2
+  idleDelay: 2
+  demoSpeed: 1.5
+  demoLoop: 2
   currentIndex: 0
 --- !u!120 &5172783877478507287
 LineRenderer:
@@ -1554,7 +1564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -20}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.31, y: 0.35}
+  m_AnchoredPosition: {x: 0.08, y: -0.29}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!331 &5747852678403922513
