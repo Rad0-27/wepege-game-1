@@ -79,8 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LetterController
   strokes:
   - {fileID: 2308389907223054106}
-  - {fileID: 0}
-  - {fileID: 0}
+  currentStroke: 0
 --- !u!1 &920930486928818647
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,8 +578,8 @@ MonoBehaviour:
   maskStart: {fileID: 6726667534227590937}
   maskMid: {fileID: 6004297015064365654}
   maskEnd: {fileID: 1914116288449145811}
-  startRadius: 0.2
-  followRadius: 0.3
+  startR: 0.1
+  followR: 0.1
   resolution: 8
   maskObject: {fileID: 2363840976664189403}
   strokeRenderer: {fileID: 5511148613970640099}
