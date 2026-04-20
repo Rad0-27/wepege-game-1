@@ -238,6 +238,7 @@ MonoBehaviour:
   - {fileID: 2308389907223054106}
   - {fileID: 935690333156092353}
   - {fileID: 433433715779008874}
+  currentStroke: 0
 --- !u!1 &920930486928818647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,7 +1443,7 @@ MonoBehaviour:
   startB: {fileID: 8109256452405040927}
   midB: {fileID: 7436380809574524940}
   endB: {fileID: 7875558409526080892}
-  switchPoint: 0.5
+  switchPoint: 0.648
 --- !u!120 &8996058195203652038
 LineRenderer:
   serializedVersion: 3

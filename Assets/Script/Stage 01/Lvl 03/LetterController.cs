@@ -4,7 +4,7 @@ public class LetterController : MonoBehaviour
 {
     public StrokeTracer[] strokes;
 
-    private int currentStroke = 0;
+    public int currentStroke = 0;
 
     void Start()
     {
@@ -36,6 +36,16 @@ public class LetterController : MonoBehaviour
         }
 
         ActivateStroke(currentStroke);
+    }
+
+    public void ClearArrow()
+    {
+        if (currentStroke > 0)
+        {
+            if (strokes[currentStroke - 1].arrow != null)
+                strokes[currentStroke - 1].arrow.SetActive(false);
+        }
+
     }
 
     void CompleteLetter()

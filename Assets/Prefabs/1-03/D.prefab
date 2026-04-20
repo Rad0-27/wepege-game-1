@@ -112,6 +112,7 @@ MonoBehaviour:
   strokes:
   - {fileID: 2308389907223054106}
   - {fileID: 1002654668446816557}
+  currentStroke: 0
 --- !u!1 &837783140124059089
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,8 +917,8 @@ Transform:
   m_GameObject: {fileID: 5656262896676903040}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.033, y: 0.565, z: 0}
-  m_LocalScale: {x: 0.13203417, y: 0.13203417, z: 0.13203417}
+  m_LocalPosition: {x: 0.016, y: -0.011, z: 0}
+  m_LocalScale: {x: 0.14896081, y: 0.14896081, z: 0.14896081}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1235415612228528706}
@@ -971,12 +972,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 1
-  m_Sprite: {fileID: -1444263687502990840, guid: 4b428761955fc8a4fa79c110d01b6386, type: 3}
+  m_Sprite: {fileID: 1335385452945238478, guid: a7a5de0be6b029c438c6389341b67274, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.43, y: 17.48}
+  m_Size: {x: 11.18, y: 17.01}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1106,16 +1107,11 @@ MonoBehaviour:
   maskStart: {fileID: 6726667534227590937}
   maskMid: {fileID: 6004297015064365654}
   maskEnd: {fileID: 1914116288449145811}
-  startRadius: 0.2
-  followRadius: 0.3
+  startR: 0.1
+  followR: 0.1
   resolution: 8
   maskObject: {fileID: 2363840976664189403}
   strokeRenderer: {fileID: 5511148613970640099}
-  pulseSpeed: 4
-  pulseScale: 1.2
-  idleDelay: 2
-  demoSpeed: 1.5
-  demoLoop: 2
   currentIndex: 0
 --- !u!120 &5172783877478507287
 LineRenderer:
@@ -1351,16 +1347,11 @@ MonoBehaviour:
   maskStart: {fileID: 8732012636707356735}
   maskMid: {fileID: 237483451163960926}
   maskEnd: {fileID: 8684183517445122109}
-  startRadius: 0.2
-  followRadius: 0.3
+  startR: 0.1
+  followR: 0.1
   resolution: 8
   maskObject: {fileID: 3668392271712340392}
   strokeRenderer: {fileID: 2281702045059662470}
-  pulseSpeed: 4
-  pulseScale: 1.2
-  idleDelay: 2
-  demoSpeed: 1.5
-  demoLoop: 2
   currentIndex: 0
 --- !u!120 &7542344442013558114
 LineRenderer:

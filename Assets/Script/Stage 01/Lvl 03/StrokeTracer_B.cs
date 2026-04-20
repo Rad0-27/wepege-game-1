@@ -99,7 +99,16 @@ public class StrokeTracer_B : StrokeTracer
         }
     }
 
-    void OnEnable()
+    protected override void CompleteStroke()
+    {
+        base.CompleteStroke();
+
+        // matikan mask
+        if (maskA != null) maskA.gameObject.SetActive(false);
+        if (maskB != null) maskB.gameObject.SetActive(false);
+    }
+
+        void OnEnable()
     {
         // saat stroke AKTIF
         if (maskObject != null)

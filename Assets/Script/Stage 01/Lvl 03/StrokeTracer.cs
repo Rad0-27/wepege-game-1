@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class StrokeTracer : MonoBehaviour
@@ -20,8 +21,8 @@ public class StrokeTracer : MonoBehaviour
     public Transform maskEnd;
 
     [Header("Settings")]
-    public float startRadius = 0.5f;
-    public float followRadius = 0.7f;
+    public float startR = 0.1f;
+    public float followR = 0.1f;
     public int resolution = 20; // makin besar makin halus
 
     [Header("Mask System")]
@@ -35,26 +36,28 @@ public class StrokeTracer : MonoBehaviour
     // 🔥 ARROW SETTINGS
     // ==============================
     [Header("Arrow Hint")]
-    public float pulseSpeed = 4f;
-    public float pulseScale = 1.2f;
+    [Header("Arrow Demo")]
+    float idleDelay = 5f;
+    float demoSpeed = 1f;
+    int demoLoop = 1;
+    float demoCooldown = 3f;
 
-    [Header("Idle Hint")]
-    public float idleDelay = 2f;
-    public float demoSpeed = 1.5f;
-    public int demoLoop = 2;
-
-    // ==============================
     float idleTimer = 0f;
     bool isDemoPlaying = false;
-    Vector3 arrowBaseScale;
+    bool isCooldown = false;
 
+    Vector3 arrowBaseScale;
 
     public int currentIndex = 0;
     private bool isDragging = false;
 
+    LevelManager levelManager;
+
     void Start()
     {
         GenerateCurve();
+
+        levelManager = FindObjectOfType<LevelManager>();
 
         if (strokeVisual != null)
             strokeVisual.SetActive(false);
@@ -73,6 +76,7 @@ public class StrokeTracer : MonoBehaviour
             strokeRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
 
         UpdateArrowPosition();
+        ResetProgressInstant();
     }
 
     void Update()
@@ -84,7 +88,7 @@ public class StrokeTracer : MonoBehaviour
         // START DRAG
         if (Input.GetMouseButtonDown(0))
         {
-            if (Vector2.Distance(mousePos, curvePoints[0]) < startRadius)
+            if (Vector2.Distance(mousePos, curvePoints[0]) < startR)
             {
                 isDragging = true;
                 currentIndex = 0;
@@ -111,12 +115,25 @@ public class StrokeTracer : MonoBehaviour
             if (arrow != null && controlPoints != null && controlPoints.Count > 0)
             {
                 arrow.transform.position = controlPoints[0].position;
-                arrow.SetActive(true);
+                
             }
             isDragging = false;
         }
-        HandleArrowPulse();
+
+        // 🔥 kalau huruf ini bukan yang aktif → sembunyikan arrow
+        if (transform.parent.GetSiblingIndex() != levelManager.currentLetterIndex)
+        {
+            if (arrow != null) arrow.SetActive(false);
+            return;
+        }
+
+        // huruf aktif → arrow boleh tampil
+        if (arrow != null && !arrow.activeSelf)
+            arrow.SetActive(true); 
+
+        
         HandleIdleDemo();
+        GetComponentInParent<LetterController>().ClearArrow();
     }
 
     // ==============================
@@ -128,7 +145,7 @@ public class StrokeTracer : MonoBehaviour
         {
             float dist = Vector2.Distance(mousePos, curvePoints[i]);
 
-            if (dist < followRadius)
+            if (dist < followR)
             {
                 currentIndex = i;
                 UpdateMaskProgress();
@@ -163,17 +180,9 @@ public class StrokeTracer : MonoBehaviour
         }
     }
 
-    void HandleArrowPulse()
-    {
-        if (arrow == null) return;
-
-        float scale = 1 + Mathf.Sin(Time.time * pulseSpeed) * (pulseScale - 1f);
-        arrow.transform.localScale = arrowBaseScale * scale;
-    }
-
     void HandleIdleDemo()
     {
-        if (arrow == null || isDemoPlaying) return;
+        if (arrow == null || isDemoPlaying || isCooldown) return;
 
         if (Input.GetMouseButton(0))
         {
@@ -189,27 +198,60 @@ public class StrokeTracer : MonoBehaviour
         }
     }
 
-    System.Collections.IEnumerator PlayDemo()
+    IEnumerator PlayDemo()
     {
         isDemoPlaying = true;
         idleTimer = 0f;
+
+        if (controlPoints == null || controlPoints.Count == 0)
+        {
+            isDemoPlaying = false;
+            yield break;
+        }
 
         for (int loop = 0; loop < demoLoop; loop++)
         {
             for (int i = 0; i < curvePoints.Count; i++)
             {
-                if (Input.GetMouseButton(0)) break;
+                if (Input.GetMouseButton(0))
+                {
+                    isDemoPlaying = false;
+                    yield break;
+                }
 
-                arrow.transform.position = Vector3.Lerp(
-                arrow.transform.position,
-                curvePoints[i],
-                Time.deltaTime * 10f);
+
+                arrow.transform.position = curvePoints[i];
+
+                if (i < curvePoints.Count - 1)
+                {
+                    Vector3 dir = curvePoints[i + 1] - curvePoints[i];
+                    float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                    float finalAngle = rotationOffset + angle;
+
+                    arrow.transform.rotation = Quaternion.Euler(0, 0, finalAngle);
+                }
 
                 yield return new WaitForSeconds(1f / (demoSpeed * 60f));
             }
         }
 
+        // 🔥 BALIK KE START
+        arrow.transform.position = controlPoints[0].position;
+
         isDemoPlaying = false;
+
+        UpdateArrowPosition();
+
+        // 🔥 COOLDOWN sebelum demo lagi
+        StartCoroutine(DemoCooldown());
+    }
+
+    IEnumerator DemoCooldown()
+    {
+        isCooldown = true;
+        yield return new WaitForSeconds(demoCooldown);
+        idleTimer = 0f;
+        isCooldown = false;
     }
 
     // ==============================
@@ -245,6 +287,9 @@ public class StrokeTracer : MonoBehaviour
         if (strokeRenderer != null)
             strokeRenderer.maskInteraction = SpriteMaskInteraction.None;
 
+        if (arrow != null)
+            arrow.SetActive(false);
+
         // lanjut ke stroke berikutnya
         GetComponentInParent<LetterController>().NextStroke();
     }
@@ -259,8 +304,6 @@ public class StrokeTracer : MonoBehaviour
         if (strokeVisual != null)
             strokeVisual.SetActive(false);
 
-        if (arrow != null)
-            arrow.SetActive(true);
 
         if (maskTransform != null && maskStart != null)
             maskTransform.position = maskStart.position;
@@ -270,6 +313,8 @@ public class StrokeTracer : MonoBehaviour
 
         if (strokeRenderer != null)
             strokeRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+
+        UpdateArrowPosition();
     }
 
     void OnEnable()
@@ -310,7 +355,7 @@ public class StrokeTracer : MonoBehaviour
         if (arrow != null && controlPoints != null)
         {
             arrow.transform.position = controlPoints[0].position;
-            arrow.SetActive(true);
+            
         }
     }
 
