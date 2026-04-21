@@ -27,6 +27,8 @@ MonoBehaviour, IPointerClickHandler
         if (popped) return;
         popped = true;
 
+        TManager.instance.PlayerDidAction();
+
         StartCoroutine(PopRoutine());
     }
 

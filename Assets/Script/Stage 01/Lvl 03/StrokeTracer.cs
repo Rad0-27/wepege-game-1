@@ -103,6 +103,7 @@ public class StrokeTracer : MonoBehaviour
         if (isDragging && Input.GetMouseButton(0))
         {
             FollowCurve(mousePos);
+            TManager.instance.PlayerDidAction();
         }
 
         // RELEASE → FAIL jika belum selesai

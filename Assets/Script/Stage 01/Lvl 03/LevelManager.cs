@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class LevelManager : MonoBehaviour
     public Transform spawnPoint;
 
     public float spacing = 2.5f;
+
+    public GameObject NextButton;
 
     private string playerName;
     public int currentLetterIndex = 0;
@@ -72,5 +75,16 @@ public class LevelManager : MonoBehaviour
     void LevelComplete()
     {
         Debug.Log("Level selesai!");
+        NextButton.SetActive(true);
+    }
+
+    public void Next()
+    {
+        SceneManager.LoadScene("Stage1_Lvl 4");
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene("Stage Map");
     }
 }

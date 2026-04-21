@@ -162,7 +162,12 @@ public class NameLevelManager : MonoBehaviour
         isChecking = false;
     }
 
-    public void GameComplete()
+    public void Next()
+    {
+        SceneManager.LoadScene("Stage1_Lvl 3");
+    }
+    
+    public void Exit()
     {
         SceneManager.LoadScene("Stage Map");
     }

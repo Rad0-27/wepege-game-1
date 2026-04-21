@@ -38,6 +38,8 @@ public class LetterDrag : MonoBehaviour
 
     void OnMouseDown()
     {
+        TManager.instance.PlayerDidAction();
+
         if (isPlaced)
         {
             isPlaced = false;

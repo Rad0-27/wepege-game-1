@@ -39,8 +39,13 @@ public class BubbleLevelManager : MonoBehaviour
         if (poppedCount >= targetToFinish)
             nextButton.SetActive(true);
     }
-    public void GameComplete()
+    public void Exit()
     {
         SceneManager.LoadScene("Stage Map");
+    }
+
+    public void Next()
+    {
+        SceneManager.LoadScene("Stage1_Lvl 2");
     }
 }
