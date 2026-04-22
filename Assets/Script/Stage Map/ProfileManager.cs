@@ -20,6 +20,12 @@ public class ProfileManager : MonoBehaviour
     public Sprite femaleIcon;
     public Sprite mengIcon;
 
+    [Header("Character")]
+    public Image character;
+    public Sprite femaleCharacter;
+    public Sprite maleCharacter;
+    public Sprite mengCharacter;
+
     private string playerName;
     private string gender;
 
@@ -59,6 +65,7 @@ public class ProfileManager : MonoBehaviour
         PlayerPrefs.SetString("Gender", "Boy");
         profileIcon.sprite = maleIcon;
         InSettingI.sprite = maleIcon;
+        character.sprite = maleCharacter;
     }
 
     public void GirlUp()
@@ -66,6 +73,7 @@ public class ProfileManager : MonoBehaviour
         PlayerPrefs.SetString("Gender", "Girl");
         profileIcon.sprite = femaleIcon;
         InSettingI.sprite = femaleIcon;
+        character.sprite = femaleCharacter;
     }
 
     public void MengUp()
@@ -73,6 +81,7 @@ public class ProfileManager : MonoBehaviour
         PlayerPrefs.SetString("Gender", "Meng");
         profileIcon.sprite = mengIcon;
         InSettingI.sprite = mengIcon;
+        character.sprite = mengCharacter;
     }
 
     // =========================
@@ -88,16 +97,19 @@ public class ProfileManager : MonoBehaviour
         {
             profileIcon.sprite = maleIcon;
             InSettingI.sprite = maleIcon;
+            character.sprite = maleCharacter;
         }
         if (gender == "Girl")
         {
             profileIcon.sprite = femaleIcon;
             InSettingI.sprite = femaleIcon;
+            character.sprite = femaleCharacter;
         }
         if(gender == "Meng")
         {  
             profileIcon.sprite = mengIcon;
             InSettingI.sprite = mengIcon;
+            character.sprite = mengCharacter;
         }
     }
 
