@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -27,5 +28,12 @@ public class MenuManager : MonoBehaviour
     {
         Credit.ResetTrigger("OpenPanel");
         Credit.SetTrigger("ClosePanel");
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // cari ulang animator di scene baru
+        optionsAnimator = GameObject.Find("OptionPanel")?.GetComponent<Animator>();
+        Credit = GameObject.Find("CreditPanel")?.GetComponent<Animator>();
     }
 }

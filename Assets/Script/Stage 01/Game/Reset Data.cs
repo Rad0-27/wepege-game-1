@@ -8,9 +8,7 @@ public class ResetPlayerData : MonoBehaviour
 
     public void ResetData()
     {
-        PlayerPrefs.DeleteKey("PlayerName");
-        PlayerPrefs.DeleteKey("Gender");
-
+        PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
 
         optionsAnimator.ResetTrigger("OpenPanel");

@@ -11,6 +11,8 @@ public class BubbleLevelManager : MonoBehaviour
     public AudioClip popSound;
 
     public GameObject nextButton;
+    public PopEffect winPop;
+    public AudioClip winsfx;
 
     int poppedCount = 0;
     public int targetToFinish = 10;
@@ -36,8 +38,16 @@ public class BubbleLevelManager : MonoBehaviour
     {
         poppedCount++;
 
-        if (poppedCount >= targetToFinish)
+        if (poppedCount >= targetToFinish && LevelProgressManager.instance.IsLevelComplete(1))
             nextButton.SetActive(true);
+        if (poppedCount >= 26)
+        {
+            LevelProgressManager.instance.SetLevelComplete(1);
+            nextButton.SetActive(true);
+            AudioManager.instance.PlaySFX(winsfx);
+            winPop.PlayPop();
+        }
+
     }
     public void Exit()
     {

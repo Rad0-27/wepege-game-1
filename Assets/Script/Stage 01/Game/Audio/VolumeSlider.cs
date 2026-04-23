@@ -1,4 +1,4 @@
-using UnityEngine;
+    using UnityEngine;
 using UnityEngine.UI;
 
 public class VolumeSlider : MonoBehaviour
@@ -24,4 +24,4 @@ public class VolumeSlider : MonoBehaviour
     {
         AudioManager.instance.SetSFXVolume(value);
     }
-}
+}   

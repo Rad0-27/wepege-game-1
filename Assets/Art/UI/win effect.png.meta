@@ -1,0 +1,1131 @@
+fileFormatVersion: 2
+guid: 501ba5d3efdf45c46bcf25153fcf50e7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6821842858275386617
+    second: win effect_0
+  - first:
+      213: 7158458110030204469
+    second: win effect_1
+  - first:
+      213: 305849823842966418
+    second: win effect_2
+  - first:
+      213: 3835226242814419272
+    second: win effect_3
+  - first:
+      213: 5343184457117357150
+    second: win effect_4
+  - first:
+      213: -3295315246828393902
+    second: win effect_5
+  - first:
+      213: 8638300958979316795
+    second: win effect_6
+  - first:
+      213: 8938648720039532358
+    second: win effect_7
+  - first:
+      213: -8725903111394623760
+    second: win effect_8
+  - first:
+      213: 2528471778296092006
+    second: win effect_9
+  - first:
+      213: 1159080075777309211
+    second: win effect_10
+  - first:
+      213: 4890385637675596789
+    second: win effect_11
+  - first:
+      213: 8849063228335451555
+    second: win effect_12
+  - first:
+      213: 2369201391261369116
+    second: win effect_13
+  - first:
+      213: -3695880073688563394
+    second: win effect_14
+  - first:
+      213: 7607587436298947348
+    second: win effect_15
+  - first:
+      213: -4251578369861621236
+    second: win effect_16
+  - first:
+      213: 5667357929739304171
+    second: win effect_17
+  - first:
+      213: -5763844674223613683
+    second: win effect_18
+  - first:
+      213: 3739895106657457990
+    second: win effect_19
+  - first:
+      213: -9216551213819346815
+    second: win effect_20
+  - first:
+      213: 7286766101685787871
+    second: win effect_21
+  - first:
+      213: -4761206262590719146
+    second: win effect_22
+  - first:
+      213: -5855293606791326205
+    second: win effect_23
+  - first:
+      213: 8339673899035991274
+    second: win effect_24
+  - first:
+      213: -2639055156270810221
+    second: win effect_25
+  - first:
+      213: 7289148644168058893
+    second: win effect_26
+  - first:
+      213: -4717834126487647686
+    second: win effect_27
+  - first:
+      213: -436125029466347372
+    second: win effect_28
+  - first:
+      213: 7934275297523667168
+    second: win effect_29
+  - first:
+      213: 6842627580912218653
+    second: win effect_30
+  - first:
+      213: -7052922242935349792
+    second: win effect_31
+  - first:
+      213: -6202682202207633054
+    second: win effect_32
+  - first:
+      213: 6179516542080675589
+    second: win effect_33
+  - first:
+      213: -7323854697615887137
+    second: win effect_34
+  - first:
+      213: -1640128198789444161
+    second: win effect_35
+  - first:
+      213: -6098321377107528525
+    second: win effect_36
+  - first:
+      213: -1897667298467393871
+    second: win effect_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: win effect_0
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 0
+        width: 1229
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70bc5f66012f351a0800000000000000
+      internalID: -6821842858275386617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_1
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 647
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53e4dd359b3f75360800000000000000
+      internalID: 7158458110030204469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_2
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 655
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29b96c85bc89e3400800000000000000
+      internalID: 305849823842966418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_3
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 642
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 841a53ca2f5793530800000000000000
+      internalID: 3835226242814419272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_4
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 634
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e545edf44fdc62a40800000000000000
+      internalID: 5343184457117357150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_5
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 624
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25a6dd90e30b442d0800000000000000
+      internalID: -3295315246828393902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_6
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 611
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3cd0ea54f861e770800000000000000
+      internalID: 8638300958979316795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_7
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 616
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 647d4f1e6a57c0c70800000000000000
+      internalID: 8938648720039532358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_8
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 602
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fef8dc1a5d57e680800000000000000
+      internalID: -8725903111394623760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_9
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 605
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66550f99fafe61320800000000000000
+      internalID: 2528471778296092006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_10
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 590
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a70f61031e51010800000000000000
+      internalID: 1159080075777309211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_11
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 589
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fb735cb3d32ed340800000000000000
+      internalID: 4890385637675596789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_12
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 589
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ade7ef2f103eca70800000000000000
+      internalID: 8849063228335451555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_13
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 588
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13ce7fdc1811e020800000000000000
+      internalID: 2369201391261369116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_14
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 578
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e31495397a895bcc0800000000000000
+      internalID: -3695880073688563394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_15
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 567
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41bc2527774939960800000000000000
+      internalID: 7607587436298947348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_16
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 565
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ae9a99ffb5ff4c0800000000000000
+      internalID: -4251578369861621236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_17
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 557
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: becba19920086ae40800000000000000
+      internalID: 5667357929739304171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_18
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 552
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d09df549ec5b200b0800000000000000
+      internalID: -5763844674223613683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_19
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 551
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6471a81e8c6c6e330800000000000000
+      internalID: 3739895106657457990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_20
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 542
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1804a1e908b381080800000000000000
+      internalID: -9216551213819346815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_21
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 546
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdcd65c992bcf1560800000000000000
+      internalID: 7286766101685787871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_22
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 531
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b3aef412cccedb0800000000000000
+      internalID: -4761206262590719146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_23
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 537
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 306569fbc71ddbea0800000000000000
+      internalID: -5855293606791326205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_24
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 548
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aec13a6c9397cb370800000000000000
+      internalID: 8339673899035991274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_25
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 548
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39bb0d35151306bd0800000000000000
+      internalID: -2639055156270810221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_26
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 529
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0848a28212482560800000000000000
+      internalID: 7289148644168058893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_27
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 534
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3a0d7dabd2e68eb0800000000000000
+      internalID: -4717834126487647686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_28
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 520
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 498600da89292f9f0800000000000000
+      internalID: -436125029466347372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_29
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 521
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e01e0378553c1e60800000000000000
+      internalID: 7934275297523667168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_30
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 504
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d123092f785e5fe50800000000000000
+      internalID: 6842627580912218653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_31
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 502
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ed1369869cfe1e90800000000000000
+      internalID: -7052922242935349792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_32
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 497
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 261c6ca7665abe9a0800000000000000
+      internalID: -6202682202207633054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_33
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 502
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50f6e56fd8d02c550800000000000000
+      internalID: 6179516542080675589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_34
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 497
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd4770ab4f07c5a90800000000000000
+      internalID: -7323854697615887137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_35
+      rect:
+        serializedVersion: 2
+        x: 1555
+        y: 497
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbdcd0dc7181d39e0800000000000000
+      internalID: -1640128198789444161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_36
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 424
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b4b55f84096e5ba0800000000000000
+      internalID: -6098321377107528525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win effect_37
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 412
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bec9f475a12aa5e0800000000000000
+      internalID: -1897667298467393871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      win effect_0: -6821842858275386617
+      win effect_1: 7158458110030204469
+      win effect_10: 1159080075777309211
+      win effect_11: 4890385637675596789
+      win effect_12: 8849063228335451555
+      win effect_13: 2369201391261369116
+      win effect_14: -3695880073688563394
+      win effect_15: 7607587436298947348
+      win effect_16: -4251578369861621236
+      win effect_17: 5667357929739304171
+      win effect_18: -5763844674223613683
+      win effect_19: 3739895106657457990
+      win effect_2: 305849823842966418
+      win effect_20: -9216551213819346815
+      win effect_21: 7286766101685787871
+      win effect_22: -4761206262590719146
+      win effect_23: -5855293606791326205
+      win effect_24: 8339673899035991274
+      win effect_25: -2639055156270810221
+      win effect_26: 7289148644168058893
+      win effect_27: -4717834126487647686
+      win effect_28: -436125029466347372
+      win effect_29: 7934275297523667168
+      win effect_3: 3835226242814419272
+      win effect_30: 6842627580912218653
+      win effect_31: -7052922242935349792
+      win effect_32: -6202682202207633054
+      win effect_33: 6179516542080675589
+      win effect_34: -7323854697615887137
+      win effect_35: -1640128198789444161
+      win effect_36: -6098321377107528525
+      win effect_37: -1897667298467393871
+      win effect_4: 5343184457117357150
+      win effect_5: -3295315246828393902
+      win effect_6: 8638300958979316795
+      win effect_7: 8938648720039532358
+      win effect_8: -8725903111394623760
+      win effect_9: 2528471778296092006
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

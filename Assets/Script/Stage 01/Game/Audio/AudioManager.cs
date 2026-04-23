@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,6 +9,13 @@ public class AudioManager : MonoBehaviour
 
     public float musicVolume = 1f;
     public float sfxVolume = 1f;
+
+    [Header("Clips")]
+    public AudioClip bgm;
+    public AudioClip clickSFX;
+
+    [Header("Base Volume")]
+    public float bgmBaseVolume = 0.5f; // default lebih kecil
 
     void Awake()
     {
@@ -21,7 +28,7 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        PlayBGM();
         LoadVolume();
     }
 
@@ -34,10 +41,23 @@ public class AudioManager : MonoBehaviour
         sfxSource.volume = sfxVolume;
     }
 
+    void PlayBGM()
+{
+    if (!musicSource.isPlaying)
+    {
+        musicSource.clip = bgm;
+        musicSource.loop = true;
+        musicSource.volume = musicVolume * bgmBaseVolume;
+        musicSource.Play();
+    }
+}
+
     public void SetMusicVolume(float value)
     {
         musicVolume = value;
-        musicSource.volume = value;
+
+        // 🔥 gabungkan base volume + slider
+        musicSource.volume = value * bgmBaseVolume;
         PlayerPrefs.SetFloat("MusicVolume", value);
     }
 
@@ -46,6 +66,11 @@ public class AudioManager : MonoBehaviour
         sfxVolume = value;
         sfxSource.volume = value;
         PlayerPrefs.SetFloat("SFXVolume", value);
+    }
+
+    public void PlayClick()
+    {
+        PlaySFX(clickSFX);
     }
 
     public void PlaySFX(AudioClip clip)

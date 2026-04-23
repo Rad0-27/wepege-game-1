@@ -13,9 +13,13 @@ public class LevelManager : MonoBehaviour
     private string playerName;
     public int currentLetterIndex = 0;
 
+    public PopEffect winPop;
+    public AudioClip winsfx;
+
     void Start()
     {
         playerName = PlayerPrefs.GetString("PlayerName", "PLAYER").ToUpper();
+        NextButton.SetActive(false);
         SpawnAllLetters();
     }
 
@@ -75,7 +79,10 @@ public class LevelManager : MonoBehaviour
     void LevelComplete()
     {
         Debug.Log("Level selesai!");
+        LevelProgressManager.instance.SetLevelComplete(3);
         NextButton.SetActive(true);
+        AudioManager.instance.PlaySFX(winsfx);
+        winPop.PlayPop();
     }
 
     public void Next()

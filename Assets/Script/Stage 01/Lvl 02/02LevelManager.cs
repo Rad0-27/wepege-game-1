@@ -17,6 +17,9 @@ public class NameLevelManager : MonoBehaviour
 
     public GameObject nextButton;
 
+    public PopEffect winPop;
+    public AudioClip winsfx;
+
     private List<LetterSlot> slots = new List<LetterSlot>();
 
     private string playerName;
@@ -150,6 +153,9 @@ public class NameLevelManager : MonoBehaviour
             Debug.Log("BENAR!");
             isChecking = false;
             nextButton.SetActive(true);
+            LevelProgressManager.instance.SetLevelComplete(2);
+            AudioManager.instance.PlaySFX(winsfx);
+            winPop.PlayPop();
 
             return;
         }

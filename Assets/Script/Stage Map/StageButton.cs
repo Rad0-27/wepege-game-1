@@ -7,6 +7,11 @@ public class StageManager : MonoBehaviour
     public GameObject levelPanel;
     public Button[] levelButtons;
 
+
+    private void Start()
+    {
+        levelPanel.SetActive(false);
+    }
     public void OpenStage(int stageIndex)
     {
         levelPanel.SetActive(true);

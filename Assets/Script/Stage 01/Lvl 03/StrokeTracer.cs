@@ -21,8 +21,8 @@ public class StrokeTracer : MonoBehaviour
     public Transform maskEnd;
 
     [Header("Settings")]
-    public float startR = 0.1f;
-    public float followR = 0.1f;
+    public float startR = 2f;
+    public float followR = 1.2f;
     public int resolution = 20; // makin besar makin halus
 
     [Header("Mask System")]

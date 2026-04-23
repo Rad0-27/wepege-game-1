@@ -46,7 +46,7 @@ MonoBehaviour, IPointerClickHandler
         }
 
         // suara pop
-        audioSource.PlayOneShot(popSound);
+        AudioManager.instance.PlaySFX(popSound);
 
         float t = 0;
         while (t < 0.2f)
