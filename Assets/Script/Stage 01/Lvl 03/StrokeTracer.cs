@@ -21,8 +21,8 @@ public class StrokeTracer : MonoBehaviour
     public Transform maskEnd;
 
     [Header("Settings")]
-    private float startR = 0.6f;
-    private float followR = 0.5f;
+    private float startR = 0.4f;
+    private float followR = 0.3f;
     public int resolution = 20; // makin besar makin halus
 
     [Header("Mask System")]
@@ -45,6 +45,9 @@ public class StrokeTracer : MonoBehaviour
     float idleTimer = 0f;
     bool isDemoPlaying = false;
     bool isCooldown = false;
+
+    [Header("Point Validation")]
+    public float pointRadius = 0.5f;
 
     Vector3 arrowBaseScale;
 
@@ -142,21 +145,27 @@ public class StrokeTracer : MonoBehaviour
     // ==============================
     void FollowCurve(Vector2 mousePos)
     {
-        for (int i = currentIndex; i < curvePoints.Count; i++)
-        {
-            float dist = Vector2.Distance(mousePos, curvePoints[i]);
 
-            if (dist < followR)
+        if (currentIndex >= curvePoints.Count)
+            return;
+
+        Vector2 targetPoint = curvePoints[currentIndex];
+
+        float dist = Vector2.Distance(mousePos, targetPoint);
+
+        // hanya lanjut kalau dekat point sekarang
+        if (dist <= pointRadius)
+        {
+            currentIndex++;
+
+            UpdateMaskProgress();
+            UpdateArrowPosition();
+
+            // selesai
+            if (currentIndex >= curvePoints.Count - 1)
             {
-                currentIndex = i;
-                UpdateMaskProgress();
-                UpdateArrowPosition();
+                CompleteStroke();
             }
-        }
-
-        if (currentIndex >= curvePoints.Count - 1)
-        {
-            CompleteStroke();
         }
     }
 
