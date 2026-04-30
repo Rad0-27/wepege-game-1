@@ -1131,7 +1131,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5529022320273088708, guid: b6ddfaf4d2e1cd347afea4d4b022cb1b, type: 3}
+  m_Sprite: {fileID: 8650588389048558872, guid: b21fec8b09af5174999db64e382453a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2202,7 +2202,7 @@ MonoBehaviour:
   sfxVolume: 1
   bgm: {fileID: 8300000, guid: beff29f523e07334995b0516dccbe2e7, type: 3}
   clickSFX: {fileID: 8300000, guid: f7c57ebfa2df98b42b64d4293971a14e, type: 3}
-  bgmBaseVolume: 0.1
+  bgmBaseVolume: 0.07
 --- !u!4 &969869391
 Transform:
   m_ObjectHideFlags: 0
